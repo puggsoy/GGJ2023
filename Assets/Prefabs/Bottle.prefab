@@ -79,6 +79,18 @@ MonoBehaviour:
   wholeBottle: {fileID: 5785089635009653444}
   brokenBottle: {fileID: 1537549539016412204}
   maxHealth: 3
+  hitAudioClips:
+  - {fileID: 8300000, guid: d865bf8bb0e4041babdd1c74c1d73902, type: 3}
+  - {fileID: 8300000, guid: bf5c44190cdd84db5a3186ef40fc2fee, type: 3}
+  - {fileID: 8300000, guid: 2d0c83226c52e492ea8ee69450b47f57, type: 3}
+  - {fileID: 8300000, guid: ab3e6ebc39c7c4a41bbc10dd2deaa401, type: 3}
+  - {fileID: 8300000, guid: 8936e856452aa48d3aaa22a8911d0595, type: 3}
+  - {fileID: 8300000, guid: 02911a3d533304333a51c12c473c67dd, type: 3}
+  breakAudioClips:
+  - {fileID: 8300000, guid: 6f2376d6c1a914756abada59b4fff3bf, type: 3}
+  - {fileID: 8300000, guid: 16b3a3b71b74641dd88716c9fc05cb73, type: 3}
+  - {fileID: 8300000, guid: 3f39c5248abe042fc9e6d86f2ab7ac28, type: 3}
+  - {fileID: 8300000, guid: 6afc202d693804c80955d8d64f0c2d53, type: 3}
 --- !u!1 &2042562666524498204
 GameObject:
   m_ObjectHideFlags: 0

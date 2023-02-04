@@ -10,11 +10,18 @@ public class Bottle : MonoBehaviour
 
     [SerializeField] int maxHealth = 3;
 
+    [SerializeField] AudioClip[] hitAudioClips;
+    [SerializeField] AudioClip[] breakAudioClips;
+
+    private SoundManager soundManager;
+
     private int health;
 
     // Start is called before the first frame update
     void Start()
     {
+        soundManager = SoundManager.Instance;
+
         health = maxHealth;
 
         wholeBottle.SetActive(true);
@@ -23,6 +30,8 @@ public class Bottle : MonoBehaviour
 
     void OnCollisionEnter(Collision other) 
     {
+
+        PlaySound();
 
         if(other.gameObject.GetComponent<Ball>() != null)
         {
@@ -56,5 +65,17 @@ public class Bottle : MonoBehaviour
     {
         wholeBottle.SetActive(false);
         brokenBottle.SetActive(true);
+        PlaySound(true);
+    }
+
+    void PlaySound(bool isBreak=false)
+    {
+        AudioClip clip = hitAudioClips[Random.Range(0, hitAudioClips.Length)];
+
+        if (isBreak)
+        {
+            clip = breakAudioClips[Random.Range(0, breakAudioClips.Length)];
+        }
+        soundManager.Play(clip);
     }
 }
