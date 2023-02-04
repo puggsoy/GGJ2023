@@ -21,6 +21,10 @@ public class Ball : MonoBehaviour
 
 	public static float s_forwardForce = 10f;
 
+	public static float s_angularMin = 1f;
+
+	public static float s_angularMax = 10f;
+
 	private Vector2 m_startPos = Vector2.zero;
 	private Vector2 m_endPos = Vector2.zero;
 
@@ -95,6 +99,7 @@ public class Ball : MonoBehaviour
 		m_rb.isKinematic = false;
 		m_collider.enabled = true;
 		m_rb.AddForce(force, m_forceMode);
+		m_rb.angularVelocity = (new Vector3(UnityEngine.Random.Range(s_angularMin, s_angularMax), 0, 0));
 
 		m_thrown = true;
 

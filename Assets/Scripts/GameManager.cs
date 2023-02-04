@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
 	private void SpawnBall()
 	{
-		Ball ball = Instantiate(m_ballPrefab, m_ballLocator.position, m_ballLocator.rotation);
+		Ball ball = Instantiate(m_ballPrefab, m_ballLocator.position, Random.rotation);
 		ball.OnLaunch += SpawnBall;
 	}
 }
