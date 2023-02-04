@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: 0fd08467d0f1f594d9112785705b2a51
+guid: c2389e86f6f533246b918aac161881cd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: beetMat
-    second: {fileID: 2100000, guid: c3c54c56eda80694cb2aaad77472074b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: extrudeBack_leavesMat
-    second: {fileID: 2100000, guid: 7c9757ce2451bce4099f3af6760a6bb7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: leavesMat
-    second: {fileID: 2100000, guid: 7c9757ce2451bce4099f3af6760a6bb7, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -47,7 +32,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1

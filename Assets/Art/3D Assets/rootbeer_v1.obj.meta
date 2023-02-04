@@ -3,7 +3,22 @@ guid: 3afc833657b85eb43b93347d73cbe399
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glassMat
+    second: {fileID: 2100000, guid: 5f1b9d83c0c1d414f8683c6ca3e81b1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lid_labelMat
+    second: {fileID: 2100000, guid: 740c8cec4cb6b5147a3be0b6c0843733, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: liquidMat
+    second: {fileID: 2100000, guid: 74e328df2df4a854881447f2dd3e8766, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
