@@ -55,6 +55,7 @@ MonoBehaviour:
   m_rb: {fileID: 3777757675748177171}
   m_collider: {fileID: 5025765755211306499}
   m_forceMode: 1
+  volume: 3
 --- !u!54 &3777757675748177171
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -7,7 +7,8 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource MusicSource;
     public AudioSource EffectsSource;
-    public float volume = 1;
+   
+    public AudioClip GameMusic;
 
     public static SoundManager Instance = null;
 
@@ -24,7 +25,12 @@ public class SoundManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void Play(AudioClip clip)
+    public void Start()
+    {
+        SoundManager.Instance.PlayMusic(GameMusic);
+    }
+
+    public void Play(AudioClip clip, float volume)
     {
         EffectsSource.clip = clip;
         EffectsSource.PlayOneShot(clip, volume);
@@ -36,10 +42,10 @@ public class SoundManager : MonoBehaviour
         MusicSource.Play();
     }
 
-    public void RandomSoundEffect(params AudioClip[] clips)
+    public void RandomSoundEffect(float volume, params AudioClip[] clips)
     {
         int randomIndex = Random.Range(0, clips.Length);
         EffectsSource.clip = clips[randomIndex];
-        EffectsSource.Play();
+        EffectsSource.PlayOneShot(EffectsSource.clip, volume);
     }
 }

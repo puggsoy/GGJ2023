@@ -18,6 +18,8 @@ public class Bottle : MonoBehaviour
     private int health;
     private bool isBroken = false;
 
+    public float volume;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,8 +77,8 @@ public class Bottle : MonoBehaviour
     {
         if (isBreak)
         {
-            soundManager.RandomSoundEffect(breakAudioClips);
+            soundManager.RandomSoundEffect(volume, breakAudioClips);
         }
-        soundManager.RandomSoundEffect(hitAudioClips);
+        soundManager.RandomSoundEffect(volume, hitAudioClips);
     }
 }

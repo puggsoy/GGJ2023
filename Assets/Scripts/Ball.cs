@@ -100,6 +100,8 @@ public class Ball : MonoBehaviour
 		}
 	}
 
+	public float volume;
+
 	private void ThrowBall(Vector3 force)
 	{
 		if (m_thrown || force == null) return;
@@ -113,7 +115,7 @@ public class Ball : MonoBehaviour
 
 		m_thrown = true;
 
-		SoundManager.Instance.RandomSoundEffect(SwipeSounds);
+		SoundManager.Instance.RandomSoundEffect(volume, SwipeSounds);
 
 		OnLaunch?.Invoke();
 	}
