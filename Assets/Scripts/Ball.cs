@@ -18,9 +18,9 @@ public class Ball : MonoBehaviour
 	[SerializeField]
 	private ForceMode m_forceMode = ForceMode.Force;
 
-	public static float s_upForce = 4f;
+	public static float s_upForce = 1f;
 
-	public static float s_forwardForce = 10f;
+	public static float s_forwardForce = 6f;
 
 	public static float s_angularMin = 1f;
 
