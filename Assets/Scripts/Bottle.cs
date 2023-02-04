@@ -36,7 +36,7 @@ public class Bottle : MonoBehaviour
 
         if (health <= 0) 
         {
-            // BreakBottle();
+            BreakBottle();
         }
     }
 
