@@ -7,6 +7,7 @@ using UnityEngine.Serialization;
 public class Ball : MonoBehaviour
 {
 	public event Action OnLaunch = null;
+	public AudioClip[] SwipeSounds;
 
 	[SerializeField]
 	private Rigidbody m_rb = null;
@@ -111,6 +112,8 @@ public class Ball : MonoBehaviour
 		m_rb.angularVelocity = (new Vector3(UnityEngine.Random.Range(s_angularMin, s_angularMax), 0, 0));
 
 		m_thrown = true;
+
+		SoundManager.Instance.RandomSoundEffect(SwipeSounds);
 
 		OnLaunch?.Invoke();
 	}

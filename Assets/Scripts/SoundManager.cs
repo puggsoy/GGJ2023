@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource MusicSource;
     public AudioSource EffectsSource;
+    public float volume = 1;
 
     public static SoundManager Instance = null;
 
@@ -26,7 +27,7 @@ public class SoundManager : MonoBehaviour
     public void Play(AudioClip clip)
     {
         EffectsSource.clip = clip;
-        EffectsSource.PlayOneShot(clip);
+        EffectsSource.PlayOneShot(clip, volume);
     }
 
     public void PlayMusic(AudioClip clip)

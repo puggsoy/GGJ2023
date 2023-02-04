@@ -46,6 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2cc1feb388ece645b4380b3043e4eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SwipeSounds:
+  - {fileID: 8300000, guid: f3d1a3fb6b95e4bcaa2268248a175e0c, type: 3}
+  - {fileID: 8300000, guid: 5516f5a9f03214711bf014c8517abe09, type: 3}
+  - {fileID: 8300000, guid: 604c43478a84044ad8612c5601158704, type: 3}
+  - {fileID: 8300000, guid: df4cb61c0e6dc4cec887b9268c9c7bf0, type: 3}
+  - {fileID: 8300000, guid: 7cb68605557da4e6da60a07e5991792d, type: 3}
   m_rb: {fileID: 3777757675748177171}
   m_collider: {fileID: 5025765755211306499}
   m_forceMode: 1
