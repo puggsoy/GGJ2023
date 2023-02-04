@@ -91,7 +91,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 16b3a3b71b74641dd88716c9fc05cb73, type: 3}
   - {fileID: 8300000, guid: 3f39c5248abe042fc9e6d86f2ab7ac28, type: 3}
   - {fileID: 8300000, guid: 6afc202d693804c80955d8d64f0c2d53, type: 3}
-  volume: 1
+  hitSFXVolume: 0.6
+  breakVolume: 0.8
 --- !u!1 &2042562666524498204
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +317,10 @@ PrefabInstance:
     - target: {fileID: 1464662650284612481, guid: a4451b270fc8bdf4d906dcc887c87351, type: 3}
       propertyPath: m_Name
       value: BrokenBottle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464662650284612481, guid: a4451b270fc8bdf4d906dcc887c87351, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1464662650284612482, guid: a4451b270fc8bdf4d906dcc887c87351, type: 3}
       propertyPath: m_RootOrder
@@ -680,10 +685,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7767964346524574374, guid: 3afc833657b85eb43b93347d73cbe399, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 740c8cec4cb6b5147a3be0b6c0843733, type: 2}
     - target: {fileID: -7635826562936255635, guid: 3afc833657b85eb43b93347d73cbe399, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6398d535d8f23a6438359c18cf4e7639, type: 2}
+    - target: {fileID: -6599271472219001609, guid: 3afc833657b85eb43b93347d73cbe399, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5f1b9d83c0c1d414f8683c6ca3e81b1a, type: 2}
+    - target: {fileID: -5971518295728010373, guid: 3afc833657b85eb43b93347d73cbe399, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 74e328df2df4a854881447f2dd3e8766, type: 2}
     - target: {fileID: 919132149155446097, guid: 3afc833657b85eb43b93347d73cbe399, type: 3}
       propertyPath: m_Name
       value: rootbeer_v1
