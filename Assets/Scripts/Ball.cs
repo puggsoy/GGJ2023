@@ -103,7 +103,6 @@ public class Ball : MonoBehaviour
 
 			speed = Math.Min(speed, s_speedClamp);
 
-			m_rb.isKinematic = false;
 			ThrowBall(new Vector3(0, s_upForce * speed, s_forwardForce * speed));
 		}
 	}
@@ -112,7 +111,7 @@ public class Ball : MonoBehaviour
 
 	private void ThrowBall(Vector3 force)
 	{
-		if (m_thrown || force == null) return;
+		if (m_thrown || force == null || force.y < 0) return;
 
 		force = new Vector3(force.x, Math.Min(force.y, s_upClamp), force.z);
 
