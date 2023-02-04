@@ -24,10 +24,20 @@ public class DebugScreen : MonoBehaviour
 	[SerializeField]
 	private TextMeshProUGUI m_yClampText = null;
 
+	[SerializeField]
+	private TextMeshProUGUI m_speedClampText = null;
+
+	[SerializeField]
+	private TextMeshProUGUI m_lastSpeedText = null;
+
 	private void Awake()
 	{
-		Refresh();
 		gameObject.SetActive(false);
+	}
+
+	private void OnEnable()
+	{
+		Refresh();
 	}
 
 	private void Refresh()
@@ -38,6 +48,8 @@ public class DebugScreen : MonoBehaviour
 		m_angularMaxText.text = Ball.s_angularMax.ToString();
 		m_swipeThresholdText.text = Ball.s_swipeThreshold.ToString();
 		m_yClampText.text = Ball.s_upClamp.ToString();
+		m_speedClampText.text = Ball.s_speedClamp.ToString();
+		m_lastSpeedText.text = string.Format("Last speed: {0}", Ball.s_lastSpeed.ToString());
 	}
 
 	public void AddYMult(float amount)
@@ -73,6 +85,12 @@ public class DebugScreen : MonoBehaviour
 	public void AddYClamp(float amount)
 	{
 		Ball.s_upClamp += amount;
+		Refresh();
+	}
+
+	public void AddSpeedClamp(float amount)
+	{
+		Ball.s_speedClamp += amount;
 		Refresh();
 	}
 

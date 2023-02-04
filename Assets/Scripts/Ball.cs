@@ -30,6 +30,10 @@ public class Ball : MonoBehaviour
 
 	public static float s_upClamp = 10f;
 
+	public static float s_speedClamp = 6f;
+
+	public static float s_lastSpeed = 0f;
+
 	private Vector2 m_startPos = Vector2.zero;
 	private Vector2 m_endPos = Vector2.zero;
 
@@ -94,6 +98,10 @@ public class Ball : MonoBehaviour
 				return;
 
 			float speed = (displacement.y / timeInterval);
+
+			s_lastSpeed = speed;
+
+			speed = Math.Min(speed, s_speedClamp);
 
 			m_rb.isKinematic = false;
 			ThrowBall(new Vector3(0, s_upForce * speed, s_forwardForce * speed));
