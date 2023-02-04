@@ -7,7 +7,10 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource MusicSource;
     public AudioSource EffectsSource;
-   
+
+    public float LowPitchRange = 0.5f;
+    public float HighPitchRange = 2f;
+
     public AudioClip GameMusic;
 
     public static SoundManager Instance = null;
@@ -45,6 +48,8 @@ public class SoundManager : MonoBehaviour
     public void RandomSoundEffect(float volume, params AudioClip[] clips)
     {
         int randomIndex = Random.Range(0, clips.Length);
+        float randomPitch = Random.Range(LowPitchRange, HighPitchRange);
+        EffectsSource.pitch = randomPitch;
         EffectsSource.clip = clips[randomIndex];
         EffectsSource.PlayOneShot(EffectsSource.clip, volume);
     }
