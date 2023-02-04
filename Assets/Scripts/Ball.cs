@@ -22,8 +22,6 @@ public class Ball : MonoBehaviour
 	[SerializeField]
 	private float m_forwardForce = 1f;
 
-	private Vector3 m_spawnedPos = Vector3.zero;
-
 	private Vector2 m_startPos = Vector2.zero;
 	private Vector2 m_endPos = Vector2.zero;
 
@@ -36,7 +34,6 @@ public class Ball : MonoBehaviour
 	{
 		m_rb.isKinematic = true;
 		m_collider.enabled = false;
-		m_spawnedPos = transform.position;
 	}
 
 	private void Update()
@@ -73,16 +70,22 @@ public class Ball : MonoBehaviour
 		{
 			m_touchTimeStart = Time.time;
 			m_startPos = Input.GetTouch(0).position;
+			m_startPos = new Vector2(m_startPos.x / Screen.width, m_startPos.y / Screen.height);
 		}
 
 		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
 		{
 			m_touchTimeEnd = Time.time;
 			float timeInterval = m_touchTimeEnd - m_touchTimeStart;
+
 			m_endPos = Input.GetTouch(0).position;
+			m_endPos = new Vector2(m_endPos.x / Screen.width, m_endPos.y / Screen.height);
+			Vector2 displacement = m_endPos - m_startPos;
+
+			float speed = (displacement.y / timeInterval);
 
 			m_rb.isKinematic = false;
-			ThrowBall(new Vector3(0, m_upForce / timeInterval, m_forwardForce / timeInterval));
+			ThrowBall(new Vector3(0, m_upForce * speed, m_forwardForce * speed));
 		}
 	}
 
