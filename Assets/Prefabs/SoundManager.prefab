@@ -240,4 +240,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MusicSource: {fileID: 5444974757252337805}
   EffectsSource: {fileID: 5444974757252337804}
-  volume: 25
+  LowPitchRange: 0.95
+  HighPitchRange: 1.2
+  GameMusic: {fileID: 0}
