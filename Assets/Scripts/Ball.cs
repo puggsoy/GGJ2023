@@ -27,6 +27,8 @@ public class Ball : MonoBehaviour
 
 	public static float s_swipeThreshold = 0.1f;
 
+	public static float s_upClamp = 10f;
+
 	private Vector2 m_startPos = Vector2.zero;
 	private Vector2 m_endPos = Vector2.zero;
 
@@ -100,6 +102,8 @@ public class Ball : MonoBehaviour
 	private void ThrowBall(Vector3 force)
 	{
 		if (m_thrown || force == null) return;
+
+		force = new Vector3(force.x, Math.Min(force.y, s_upClamp), force.z);
 
 		m_rb.isKinematic = false;
 		m_collider.enabled = true;

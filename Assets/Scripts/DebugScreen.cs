@@ -20,6 +20,9 @@ public class DebugScreen : MonoBehaviour
 	[SerializeField]
 	private TextMeshProUGUI m_swipeThresholdText = null;
 
+	[SerializeField]
+	private TextMeshProUGUI m_yClampText = null;
+
 	private void Awake()
 	{
 		Refresh();
@@ -32,6 +35,7 @@ public class DebugScreen : MonoBehaviour
 		m_angularMinText.text = Ball.s_angularMin.ToString();
 		m_angularMaxText.text = Ball.s_angularMax.ToString();
 		m_swipeThresholdText.text = Ball.s_swipeThreshold.ToString();
+		m_yClampText.text = Ball.s_upClamp.ToString();
 	}
 
 	public void AddYMult(float amount)
@@ -61,6 +65,12 @@ public class DebugScreen : MonoBehaviour
 	public void AddSwipeThreshold(float amount)
 	{
 		Ball.s_swipeThreshold += amount;
+		Refresh();
+	}
+
+	public void AddYClamp(float amount)
+	{
+		Ball.s_upClamp += amount;
 		Refresh();
 	}
 }
