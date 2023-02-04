@@ -111,7 +111,7 @@ public class Ball : MonoBehaviour
 
 	private void ThrowBall(Vector3 force)
 	{
-		if (m_thrown || force == null) return;
+		if (m_thrown || force == null || force.y < 0) return;
 
 		force = new Vector3(force.x, Math.Min(force.y, s_upClamp), force.z);
 
