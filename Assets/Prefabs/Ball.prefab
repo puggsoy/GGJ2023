@@ -102,7 +102,7 @@ MonoBehaviour:
   m_collider: {fileID: 3777757675748177175}
   m_forceMode: 1
   m_upForce: 4
-  m_forwardForce: 4
+  m_forwardForce: 10
 --- !u!135 &3777757675748177175
 SphereCollider:
   m_ObjectHideFlags: 0
