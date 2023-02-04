@@ -7,7 +7,6 @@ using UnityEngine.Serialization;
 public class Ball : MonoBehaviour
 {
 	public event Action OnLaunch = null;
-	public AudioClip[] SwipeSounds;
 
 	[SerializeField]
 	private Rigidbody m_rb = null;
@@ -17,6 +16,16 @@ public class Ball : MonoBehaviour
 
 	[SerializeField]
 	private ForceMode m_forceMode = ForceMode.Force;
+
+	[SerializeField]
+	private float m_editorSpeed = 1;
+
+	[Header("Audio")]
+	[SerializeField]
+	private float m_volume = 3;
+
+	[SerializeField]
+	public AudioClip[] m_swipeSounds;
 
 	public static float s_upForce = 1f;
 
@@ -70,7 +79,8 @@ public class Ball : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			ThrowBall(new Vector3(0, s_upForce, s_forwardForce));
+			s_lastSpeed = m_editorSpeed;
+			ThrowBall(new Vector3(0, s_upForce * m_editorSpeed, s_forwardForce * m_editorSpeed));
 		}
 	}
 
@@ -107,8 +117,6 @@ public class Ball : MonoBehaviour
 		}
 	}
 
-	public float volume;
-
 	private void ThrowBall(Vector3 force)
 	{
 		if (m_thrown || force == null || force.y < 0) return;
@@ -122,7 +130,7 @@ public class Ball : MonoBehaviour
 
 		m_thrown = true;
 
-		SoundManager.Instance.RandomSoundEffect(volume, SwipeSounds);
+		SoundManager.Instance.RandomSoundEffect(m_volume, m_swipeSounds);
 
 		OnLaunch?.Invoke();
 	}
