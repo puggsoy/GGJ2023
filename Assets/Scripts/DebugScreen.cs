@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DebugScreen : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class DebugScreen : MonoBehaviour
 	private void Awake()
 	{
 		Refresh();
+		gameObject.SetActive(false);
 	}
 
 	private void Refresh()
@@ -72,5 +74,10 @@ public class DebugScreen : MonoBehaviour
 	{
 		Ball.s_upClamp += amount;
 		Refresh();
+	}
+
+	public void Reset()
+	{
+		SceneManager.LoadScene("GameScene");
 	}
 }
