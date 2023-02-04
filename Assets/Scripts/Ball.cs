@@ -25,6 +25,8 @@ public class Ball : MonoBehaviour
 
 	public static float s_angularMax = 10f;
 
+	public static float s_swipeThreshold = 0.1f;
+
 	private Vector2 m_startPos = Vector2.zero;
 	private Vector2 m_endPos = Vector2.zero;
 
@@ -84,6 +86,9 @@ public class Ball : MonoBehaviour
 			m_endPos = Input.GetTouch(0).position;
 			m_endPos = new Vector2(m_endPos.x / Screen.width, m_endPos.y / Screen.height);
 			Vector2 displacement = m_endPos - m_startPos;
+
+			if (displacement.sqrMagnitude < (s_swipeThreshold * s_swipeThreshold))
+				return;
 
 			float speed = (displacement.y / timeInterval);
 
