@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Ball : MonoBehaviour
 {
@@ -16,11 +17,9 @@ public class Ball : MonoBehaviour
 	[SerializeField]
 	private ForceMode m_forceMode = ForceMode.Force;
 
-	[SerializeField]
-	private float m_upForce = 1f;
+	public static float s_upForce = 4f;
 
-	[SerializeField]
-	private float m_forwardForce = 1f;
+	public static float s_forwardForce = 10f;
 
 	private Vector2 m_startPos = Vector2.zero;
 	private Vector2 m_endPos = Vector2.zero;
@@ -58,7 +57,7 @@ public class Ball : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			ThrowBall(new Vector3(0, m_upForce, m_forwardForce));
+			ThrowBall(new Vector3(0, s_upForce, s_forwardForce));
 		}
 	}
 
@@ -85,7 +84,7 @@ public class Ball : MonoBehaviour
 			float speed = (displacement.y / timeInterval);
 
 			m_rb.isKinematic = false;
-			ThrowBall(new Vector3(0, m_upForce * speed, m_forwardForce * speed));
+			ThrowBall(new Vector3(0, s_upForce * speed, s_forwardForce * speed));
 		}
 	}
 
