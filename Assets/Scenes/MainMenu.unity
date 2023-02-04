@@ -184,7 +184,7 @@ MonoBehaviour:
   m_text: Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d6bcd5a54420467eb811c6b396bcde0, type: 2}
-  m_sharedMaterial: {fileID: 7709169528069720489, guid: 3d6bcd5a54420467eb811c6b396bcde0, type: 2}
+  m_sharedMaterial: {fileID: -6109510986043528442, guid: 3d6bcd5a54420467eb811c6b396bcde0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.55
+  m_fontSize: 27.75
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -364,7 +364,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -70}
-  m_SizeDelta: {x: 160, y: 40.3}
+  m_SizeDelta: {x: 85.5, y: 33.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024451806
 MonoBehaviour:
@@ -512,7 +512,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 480, y: 800}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_text: Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d6bcd5a54420467eb811c6b396bcde0, type: 2}
-  m_sharedMaterial: {fileID: 7709169528069720489, guid: 3d6bcd5a54420467eb811c6b396bcde0, type: 2}
+  m_sharedMaterial: {fileID: -6109510986043528442, guid: 3d6bcd5a54420467eb811c6b396bcde0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -839,8 +839,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.39, y: 310}
-  m_SizeDelta: {x: 630.8, y: 249}
+  m_AnchoredPosition: {x: 0, y: 184.4}
+  m_SizeDelta: {x: 396.2, y: 86.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2008174199
 MonoBehaviour:
@@ -889,7 +889,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 147.35
+  m_fontSize: 92.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1070,8 +1070,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -347}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -263.4}
+  m_SizeDelta: {x: 85.6, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2104975502
 MonoBehaviour:
