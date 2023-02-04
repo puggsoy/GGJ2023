@@ -1636,10 +1636,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 833629623046659974, guid: e6b4deada9716294ab896e0d84ca69d7, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2185aee22c48656428760e2da00cca5d, type: 2}
     - target: {fileID: 9008094219145278029, guid: e6b4deada9716294ab896e0d84ca69d7, type: 3}
       propertyPath: m_Name
       value: Env
@@ -1687,14 +1683,6 @@ PrefabInstance:
     - target: {fileID: 9008094219145278030, guid: e6b4deada9716294ab896e0d84ca69d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008094219952975738, guid: e6b4deada9716294ab896e0d84ca69d7, type: 3}
-      propertyPath: m_Color.b
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008094219952975738, guid: e6b4deada9716294ab896e0d84ca69d7, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9194805
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
