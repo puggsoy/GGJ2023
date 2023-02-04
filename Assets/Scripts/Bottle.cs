@@ -16,6 +16,7 @@ public class Bottle : MonoBehaviour
     private SoundManager soundManager;
 
     private int health;
+    private bool isBroken = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class Bottle : MonoBehaviour
 
     void OnCollisionEnter(Collision other) 
     {
+        if (isBroken) { return; }
 
         PlaySound();
 
@@ -63,19 +65,18 @@ public class Bottle : MonoBehaviour
 
     void BreakBottle()
     {
+        isBroken = true;
+        PlaySound(true);
         wholeBottle.SetActive(false);
         brokenBottle.SetActive(true);
-        PlaySound(true);
     }
 
     void PlaySound(bool isBreak=false)
     {
-        AudioClip clip = hitAudioClips[Random.Range(0, hitAudioClips.Length)];
-
         if (isBreak)
         {
-            clip = breakAudioClips[Random.Range(0, breakAudioClips.Length)];
+            soundManager.RandomSoundEffect(breakAudioClips);
         }
-        soundManager.Play(clip);
+        soundManager.RandomSoundEffect(hitAudioClips);
     }
 }
