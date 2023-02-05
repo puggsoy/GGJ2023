@@ -8,13 +8,18 @@ public class HUDManager : MonoBehaviour
 
     public void GoToMenu()
     {
-        Time.timeScale = 1;
+        ResetTimeScale();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void ResetGame()
     {
-        Time.timeScale = 1;
+        ResetTimeScale();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void ResetTimeScale()
+    {
+        Time.timeScale = 1;
     }
 }
