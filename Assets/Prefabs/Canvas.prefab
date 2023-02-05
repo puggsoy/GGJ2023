@@ -1026,12 +1026,12 @@ RectTransform:
   m_Children:
   - {fileID: 7503438558007093083}
   - {fileID: 1334497008062263930}
-  - {fileID: 2032955888726174381}
   - {fileID: 2032955889605174271}
-  - {fileID: 3012882276947727019}
   - {fileID: 7353239942207368375}
   - {fileID: 2939720059945396061}
   - {fileID: 2032955890035234162}
+  - {fileID: 2032955888726174381}
+  - {fileID: 3012882276947727019}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
