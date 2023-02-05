@@ -13,9 +13,12 @@ public class Bottle : MonoBehaviour
     [SerializeField] AudioClip[] hitAudioClips;
     [SerializeField] AudioClip[] breakAudioClips;
 
+    private ScoreHandler scoreHandler;
+
     private SoundManager soundManager;
 
     private int health;
+    [SerializeField] int breakScore = 10;
     private bool isBroken = false;
 
     public BottleSpawn spawner;
@@ -27,6 +30,7 @@ public class Bottle : MonoBehaviour
     void Start()
     {
         soundManager = SoundManager.Instance;
+        scoreHandler = ScoreHandler.Instance;
 
         health = maxHealth;
 
@@ -74,6 +78,7 @@ public class Bottle : MonoBehaviour
     {
         isBroken = true;
         PlaySound(true);
+        scoreHandler.AddToScore(breakScore);
         wholeBottle.SetActive(false);
         brokenBottle.SetActive(true);
 

@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour
 
     public TextMeshProUGUI timeText;
 
+    [SerializeField] GameOverScreen gameOverScreen;
+
     private void Start()
     {
         timerIsRunning = true;
@@ -27,9 +29,10 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                Debug.Log("Out of time");
+                // Debug.Log("Out of time");
                 timeRemaining = 0;
                 timerIsRunning = false;
+                gameOverScreen.EnableGameOver();
             }
         }
     }
