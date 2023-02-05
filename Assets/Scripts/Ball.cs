@@ -18,6 +18,9 @@ public class Ball : MonoBehaviour
 	private ForceMode m_forceMode = ForceMode.Force;
 
 	[SerializeField]
+	private float m_xDamp = 0.5f;
+
+	[SerializeField]
 	private float m_editorSpeed = 1;
 
 	[Header("Audio")]
@@ -104,16 +107,21 @@ public class Ball : MonoBehaviour
 			m_endPos = new Vector2(m_endPos.x / Screen.width, m_endPos.y / Screen.height);
 			Vector2 displacement = m_endPos - m_startPos;
 
-			if (displacement.sqrMagnitude < (s_swipeThreshold * s_swipeThreshold))
+			float displacementMagnitude = displacement.magnitude;
+
+			if (displacementMagnitude < s_swipeThreshold)
 				return;
 
-			float speed = (displacement.y / timeInterval);
+			float speed = (displacementMagnitude / timeInterval);
 
 			s_lastSpeed = speed;
 
 			speed = Math.Min(speed, s_speedClamp);
 
-			ThrowBall(new Vector3(0, s_upForce * speed, s_forwardForce * speed));
+			Vector3 force = new Vector3(displacement.x, 0f, displacement.y).normalized * speed * s_forwardForce;
+			force.Set(force.x * m_xDamp, s_upForce * speed, force.z);
+
+			ThrowBall(force);
 		}
 	}
 
