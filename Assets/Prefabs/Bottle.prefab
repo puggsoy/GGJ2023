@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8726344159766753730}
   - component: {fileID: 8540347141276111368}
   - component: {fileID: 6345576121939101460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 7527725536456121430}
   - component: {fileID: 2433955361109486454}
   - component: {fileID: 716428243837140548}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2533391980309675434}
   - component: {fileID: 1737184926957325635}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SurroundsCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,6 +712,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3afc833657b85eb43b93347d73cbe399, type: 3}
       propertyPath: m_Name
       value: rootbeer_v1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3afc833657b85eb43b93347d73cbe399, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 3afc833657b85eb43b93347d73cbe399, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

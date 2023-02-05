@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3777757675748177170}
   - component: {fileID: 3777757675748177196}
   - component: {fileID: 3777757675748177171}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,6 +101,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3777757675748177170}
     m_Modifications:
+    - target: {fileID: -8903047618450831897, guid: 0fd08467d0f1f594d9112785705b2a51, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0fd08467d0f1f594d9112785705b2a51, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -165,10 +169,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: beetroot_v1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0fd08467d0f1f594d9112785705b2a51, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1446317025356153247, guid: 0fd08467d0f1f594d9112785705b2a51, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2e47d0404f0986548a3bd836bd433edd, type: 2}
+    - target: {fileID: 8603806674150118374, guid: 0fd08467d0f1f594d9112785705b2a51, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1446317025356153247, guid: 0fd08467d0f1f594d9112785705b2a51, type: 3}
     m_RemovedGameObjects: []
