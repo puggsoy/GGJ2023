@@ -157,4 +157,31 @@ public class Ball : MonoBehaviour
 		m_collided = true;
 		SoundManager.Instance.RandomSoundEffect(m_rollVolume, m_rollSounds);
 	}
+
+	public void Shrink()
+	{
+		StartCoroutine(ShrinkCoroutine());
+	}
+
+	private IEnumerator ShrinkCoroutine()
+	{
+		float timePassed = 0;
+		float duration = 1;
+
+		Vector3 startScale = transform.localScale;
+		Vector3 endScale = Vector3.zero;
+
+		while (true)
+		{
+			timePassed += Time.deltaTime;
+			transform.localScale = Vector3.Lerp(startScale, endScale, timePassed / duration);
+			
+			if (timePassed >= duration)
+				break;
+
+			yield return null;
+		}
+
+		Destroy(gameObject);
+	}
 }

@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ballPrefab: {fileID: 3777757675748177196, guid: 351601e02bfcc95458b68a3362e081e7, type: 3}
   m_ballLocator: {fileID: 0}
+  m_maxBalls: 10
 --- !u!114 &8426818290883007677
 MonoBehaviour:
   m_ObjectHideFlags: 0
