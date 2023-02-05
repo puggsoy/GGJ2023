@@ -51,13 +51,21 @@ MonoBehaviour:
   m_forceMode: 1
   m_xDamp: 0.5
   m_editorSpeed: 2.5
-  m_volume: 3
+  m_swipeVolume: 3
   m_swipeSounds:
   - {fileID: 8300000, guid: f3d1a3fb6b95e4bcaa2268248a175e0c, type: 3}
   - {fileID: 8300000, guid: 5516f5a9f03214711bf014c8517abe09, type: 3}
   - {fileID: 8300000, guid: 604c43478a84044ad8612c5601158704, type: 3}
   - {fileID: 8300000, guid: df4cb61c0e6dc4cec887b9268c9c7bf0, type: 3}
   - {fileID: 8300000, guid: 7cb68605557da4e6da60a07e5991792d, type: 3}
+  m_rollVolume: 3
+  m_rollSounds:
+  - {fileID: 8300000, guid: b5ddb7c5734a74afab165ae80b69f935, type: 3}
+  - {fileID: 8300000, guid: 00d8e3cb4083d4bdd917a5d7072a15a7, type: 3}
+  - {fileID: 8300000, guid: b48a71062620f4ea48dd495cff132bdd, type: 3}
+  - {fileID: 8300000, guid: ea353ea9d59fe42898caee4bd74bd04e, type: 3}
+  - {fileID: 8300000, guid: 51acc36f19f194293bef6e6e505175c0, type: 3}
+  - {fileID: 8300000, guid: 5d0f57eed6e314c00866d890f407db8a, type: 3}
 --- !u!54 &3777757675748177171
 Rigidbody:
   m_ObjectHideFlags: 0

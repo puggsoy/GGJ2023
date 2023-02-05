@@ -25,10 +25,16 @@ public class Ball : MonoBehaviour
 
 	[Header("Audio")]
 	[SerializeField]
-	private float m_volume = 3;
+	private float m_swipeVolume = 3;
 
 	[SerializeField]
 	public AudioClip[] m_swipeSounds;
+
+	[SerializeField]
+	private float m_rollVolume = 3;
+
+	[SerializeField]
+	private AudioClip[] m_rollSounds = null;
 
 	public static float s_upForce = 1f;
 
@@ -53,6 +59,7 @@ public class Ball : MonoBehaviour
 	private float m_touchTimeEnd = 0f;
 
 	private bool m_thrown = false;
+	private bool m_collided = false;
 
 	private void Awake()
 	{
@@ -138,8 +145,16 @@ public class Ball : MonoBehaviour
 
 		m_thrown = true;
 
-		SoundManager.Instance.RandomSoundEffect(m_volume, m_swipeSounds);
+		SoundManager.Instance.RandomSoundEffect(m_swipeVolume, m_swipeSounds);
 
 		OnLaunch?.Invoke();
+	}
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		if (m_collided) return;
+
+		m_collided = true;
+		SoundManager.Instance.RandomSoundEffect(m_rollVolume, m_rollSounds);
 	}
 }
