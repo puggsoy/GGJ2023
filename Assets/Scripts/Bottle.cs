@@ -18,6 +18,8 @@ public class Bottle : MonoBehaviour
     private int health;
     private bool isBroken = false;
 
+    public BottleSpawn spawner;
+
     public float hitSFXVolume;
     public float breakVolume;
 
@@ -72,6 +74,8 @@ public class Bottle : MonoBehaviour
         PlaySound(true);
         wholeBottle.SetActive(false);
         brokenBottle.SetActive(true);
+
+        spawner.SpawnBottle();
     }
 
     void PlaySound(bool isBreak=false)
