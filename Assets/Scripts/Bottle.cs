@@ -38,7 +38,18 @@ public class Bottle : MonoBehaviour
         brokenBottle.SetActive(false);
 
         spawner = BottleSpawn.instance;
+
+        //GetComponent<Rigidbody>().isKinematic = true;
+
+        StartCoroutine(KinematicCoroutine());
     }
+
+    private IEnumerator KinematicCoroutine()
+    {
+        yield return new WaitForSeconds(1);
+
+		GetComponent<Rigidbody>().isKinematic = false;
+	}
 
     void OnCollisionEnter(Collision other) 
     {
@@ -64,11 +75,13 @@ public class Bottle : MonoBehaviour
 
     void OnTriggerEnter(Collider other) 
     {
-        // if(other.gameObject.GetComponent<Ball>() != null) { return; }
+		// if(other.gameObject.GetComponent<Ball>() != null) { return; }
 
-        // if(other.gameObject.GetComponent<Bottle>() != null) { return; }
-        
-        if(other.tag == "Floor")
+		// if(other.gameObject.GetComponent<Bottle>() != null) { return; }
+
+		if (isBroken) { return; }
+
+		if (other.tag == "Floor")
         {
             BreakBottle();
         }
@@ -82,7 +95,7 @@ public class Bottle : MonoBehaviour
         wholeBottle.SetActive(false);
         brokenBottle.SetActive(true);
 
-        spawner.SpawnBottle();
+        spawner.QueueBottle();
     }
 
     void PlaySound(bool isBreak=false)
