@@ -44,6 +44,53 @@ MonoBehaviour:
   opacity:
     overrideState: 0
     value: 1
+--- !u!114 &-2307143276050446053
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
+  m_Name: Bloom
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  intensity:
+    overrideState: 1
+    value: 1.68
+  threshold:
+    overrideState: 1
+    value: 1.02
+  softKnee:
+    overrideState: 1
+    value: 0.5
+  clamp:
+    overrideState: 0
+    value: 65472
+  diffusion:
+    overrideState: 0
+    value: 7
+  anamorphicRatio:
+    overrideState: 0
+    value: 0
+  color:
+    overrideState: 1
+    value: {r: 1.9364204, g: 0, b: 2, a: 1}
+  fastMode:
+    overrideState: 0
+    value: 0
+  dirtTexture:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  dirtIntensity:
+    overrideState: 0
+    value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +107,7 @@ MonoBehaviour:
   - {fileID: 980851416115002611}
   - {fileID: 6710286882447858339}
   - {fileID: -9140150640132546483}
+  - {fileID: -2307143276050446053}
 --- !u!114 &980851416115002611
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -168,7 +216,7 @@ MonoBehaviour:
     value: 3.9
   colorFilter:
     overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 1, g: 0.24056602, b: 0.24056602, a: 1}
   hueShift:
     overrideState: 0
     value: 0
@@ -186,13 +234,13 @@ MonoBehaviour:
     value: 0
   mixerRedOutRedIn:
     overrideState: 0
-    value: 100
+    value: 98
   mixerRedOutGreenIn:
     overrideState: 0
-    value: 0
+    value: -39
   mixerRedOutBlueIn:
     overrideState: 0
-    value: 0
+    value: 21
   mixerGreenOutRedIn:
     overrideState: 0
     value: 0
