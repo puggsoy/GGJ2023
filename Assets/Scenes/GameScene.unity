@@ -3974,6 +3974,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 325275337315108782, guid: 4f8a79bd5afbd414f9a0e7d1eb5b9a5d, type: 3}
+      propertyPath: m_spawnDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325275337315108782, guid: 4f8a79bd5afbd414f9a0e7d1eb5b9a5d, type: 3}
       propertyPath: SpawnPoints.Array.data[0]
       value: 
       objectReference: {fileID: 15123665}

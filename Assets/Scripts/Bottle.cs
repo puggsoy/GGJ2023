@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Bottle : MonoBehaviour
 {
-
     [SerializeField] GameObject wholeBottle;
     [SerializeField] GameObject brokenBottle;
+    [SerializeField] GameObject[] brokenBottlePieces;
+    [SerializeField] float CleanUpAfterSeconds = 2f;
 
     [SerializeField] int maxHealth = 3;
 
@@ -20,6 +21,7 @@ public class Bottle : MonoBehaviour
     private int health;
     [SerializeField] int breakScore = 10;
     private bool isBroken = false;
+
 
     public BottleSpawn spawner;
 
@@ -96,6 +98,8 @@ public class Bottle : MonoBehaviour
         brokenBottle.SetActive(true);
 
         spawner.QueueBottle();
+
+        StartCoroutine(CleanUpPieces());
     }
 
     void PlaySound(bool isBreak=false)
@@ -105,5 +109,14 @@ public class Bottle : MonoBehaviour
             soundManager.RandomSoundEffect(breakVolume, breakAudioClips);
         }
         soundManager.RandomSoundEffect(hitSFXVolume, hitAudioClips);
+    }
+
+    private IEnumerator CleanUpPieces()
+    {
+        yield return new WaitForSeconds(CleanUpAfterSeconds);
+        for(int i = 0; i < brokenBottlePieces.Length; i++) {
+            //brokenBottlePieces[i].GetComponent<Rigidbody>().isKinematic = true;
+            brokenBottlePieces[i].SetActive(false);
+        }
     }
 }
