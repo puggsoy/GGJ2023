@@ -3,7 +3,32 @@ guid: c2389e86f6f533246b918aac161881cd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: backboardMat
+    second: {fileID: 2100000, guid: 72dc2295094807844adf35b6f4f4f9a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bordersMat
+    second: {fileID: 2100000, guid: 72dc2295094807844adf35b6f4f4f9a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: borders_extrudeFrontMat
+    second: {fileID: 2100000, guid: 72dc2295094807844adf35b6f4f4f9a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: railsMat
+    second: {fileID: 2100000, guid: 72dc2295094807844adf35b6f4f4f9a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: runwayMat
+    second: {fileID: 2100000, guid: 72dc2295094807844adf35b6f4f4f9a8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
