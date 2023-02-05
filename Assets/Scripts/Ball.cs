@@ -7,7 +7,6 @@ using UnityEngine.Serialization;
 public class Ball : MonoBehaviour
 {
 	public event Action OnLaunch = null;
-	public AudioClip[] SwipeSounds;
 
 	[SerializeField]
 	private Rigidbody m_rb = null;
@@ -17,6 +16,19 @@ public class Ball : MonoBehaviour
 
 	[SerializeField]
 	private ForceMode m_forceMode = ForceMode.Force;
+
+	[SerializeField]
+	private float m_xDamp = 0.5f;
+
+	[SerializeField]
+	private float m_editorSpeed = 1;
+
+	[Header("Audio")]
+	[SerializeField]
+	private float m_volume = 3;
+
+	[SerializeField]
+	public AudioClip[] m_swipeSounds;
 
 	public static float s_upForce = 1f;
 
@@ -70,7 +82,8 @@ public class Ball : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			ThrowBall(new Vector3(0, s_upForce, s_forwardForce));
+			s_lastSpeed = m_editorSpeed;
+			ThrowBall(new Vector3(0, s_upForce * m_editorSpeed, s_forwardForce * m_editorSpeed));
 		}
 	}
 
@@ -94,20 +107,23 @@ public class Ball : MonoBehaviour
 			m_endPos = new Vector2(m_endPos.x / Screen.width, m_endPos.y / Screen.height);
 			Vector2 displacement = m_endPos - m_startPos;
 
-			if (displacement.sqrMagnitude < (s_swipeThreshold * s_swipeThreshold))
+			float displacementMagnitude = displacement.magnitude;
+
+			if (displacementMagnitude < s_swipeThreshold)
 				return;
 
-			float speed = (displacement.y / timeInterval);
+			float speed = (displacementMagnitude / timeInterval);
 
 			s_lastSpeed = speed;
 
 			speed = Math.Min(speed, s_speedClamp);
 
-			ThrowBall(new Vector3(0, s_upForce * speed, s_forwardForce * speed));
+			Vector3 force = new Vector3(displacement.x, 0f, displacement.y).normalized * speed * s_forwardForce;
+			force.Set(force.x * m_xDamp, s_upForce * speed, force.z);
+
+			ThrowBall(force);
 		}
 	}
-
-	public float volume;
 
 	private void ThrowBall(Vector3 force)
 	{
@@ -122,7 +138,7 @@ public class Ball : MonoBehaviour
 
 		m_thrown = true;
 
-		SoundManager.Instance.RandomSoundEffect(volume, SwipeSounds);
+		SoundManager.Instance.RandomSoundEffect(m_volume, m_swipeSounds);
 
 		OnLaunch?.Invoke();
 	}
