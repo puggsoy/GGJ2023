@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1464662650284612482}
   - component: {fileID: 8726344159766753730}
   - component: {fileID: 8540347141276111368}
+  - component: {fileID: 6345576121939101460}
   m_Layer: 0
   m_Name: Bottle
   m_TagString: Untagged
@@ -60,7 +61,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -91,8 +92,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 16b3a3b71b74641dd88716c9fc05cb73, type: 3}
   - {fileID: 8300000, guid: 3f39c5248abe042fc9e6d86f2ab7ac28, type: 3}
   - {fileID: 8300000, guid: 6afc202d693804c80955d8d64f0c2d53, type: 3}
+  spawner: {fileID: 0}
   hitSFXVolume: 0.6
   breakVolume: 0.8
+--- !u!114 &6345576121939101460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464662650284612481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f0d81b7539b4be0ac964b8f2a276cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceMult: 200
 --- !u!1 &2042562666524498204
 GameObject:
   m_ObjectHideFlags: 0
