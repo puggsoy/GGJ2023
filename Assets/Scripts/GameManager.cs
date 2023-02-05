@@ -28,7 +28,9 @@ public class GameManager : MonoBehaviour
 
 		if (m_balls.Count > m_maxBalls)
 		{
-			m_balls[0].Shrink();
+			if (m_balls[0] != null)
+				m_balls[0].Shrink();
+
 			m_balls.RemoveAt(0);
 		}
 	}
