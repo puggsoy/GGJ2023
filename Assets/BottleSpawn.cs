@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class BottleSpawn : MonoBehaviour
 {
+    public static BottleSpawn instance;
+
     public Transform[] SpawnPoints;
     public Transform point;
     public GameObject Prefab;
 
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public void SpawnBottle()
     {
-        Wait();
+        StartCoroutine(Wait());
 
         int randomIndex = Random.Range(0, SpawnPoints.Length);
         point = SpawnPoints[randomIndex];

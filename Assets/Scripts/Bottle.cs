@@ -32,6 +32,8 @@ public class Bottle : MonoBehaviour
 
         wholeBottle.SetActive(true);
         brokenBottle.SetActive(false);
+
+        spawner = BottleSpawn.instance;
     }
 
     void OnCollisionEnter(Collision other) 
