@@ -10,6 +10,7 @@ public class ScoreHandler : MonoBehaviour
     private int score;
 
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI finalScoreText;
 
     public int Score { get { return score; } }
 
@@ -44,5 +45,6 @@ public class ScoreHandler : MonoBehaviour
     private void UpdateTextGUI()
     {
         scoreText.text = $"{score:D5}";
+        finalScoreText.text = $"{score:D5}";
     }
 }
